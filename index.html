@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>lcheck</title>
+    <link href="./style/app.css" rel='stylesheet' type="text/css">
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <td>
+                Native
+            </td>
+            <td>
+                <span><input type="checkbox" name="ch1"></span> [ch1] without label<br>
+                <label><span><input type="checkbox" name="ch2"></span> [ch2] label</label><br>
+                <label><span><input type="checkbox" name="ch3" checked="checked"></span> [ch3] label</label><br>
+                <label><span><input type="checkbox" name="ch4" disabled="disabled"></span> [ch4] label</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Input with outer label
+            </td>
+            <td>
+                <label><input type="checkbox" class="i-lcheck" name="ch5"> [ch5] Input + Label</label><br>
+                <label><input type="checkbox" class="i-lcheck" name="ch6"> [ch6] Input + Label</label><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Input only
+            </td>
+            <td>
+                <input type="checkbox" class="i-lcheck" name="ch7" value="true" disabled> [ch7] Input <br>
+                <input type="checkbox" class="i-lcheck" name="ch8"> [ch8] Input<br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Input with predefined value only
+            </td>
+            <td>
+                <label><input type="checkbox" class="i-lcheck" name="ch9" value="true" checked="checked"> [ch9] Input checked</label><br>
+                <label><input type="checkbox" class="i-lcheck" name="ch10" checked="checked"> [ch10] Input checked</label><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Input disabled only
+            </td>
+            <td>
+                <label><input type="checkbox" class="i-lcheck" name="ch11" value="true" disabled> [ch11] Input disabled</label><br>
+                <label><input type="checkbox" class="i-lcheck" name="ch12" disabled> [ch12] Input disabled</label><br>
+                <label><input type="checkbox" class="i-lcheck" name="ch13" checked="checked" disabled="disabled"> [ch13] Input disabled</label><br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Serialize</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <textarea class="b-textarea"></textarea>
+            </td>
+        </tr>
+    </table>
+</form>
+<script src="./bower_components/jquery/jquery.min.js"></script>
+<script src="./lcheck.js"></script>
+<script>
+    $(document).ready(function () {
+        var $out = $('.b-textarea');
+
+        $('form').submit(function () {
+            $out.val($(this).serialize());
+            return false;
+        });
+        $('.i-lcheck').lcheck();
+        $('.i-lcheck').bind('lcheck', function () {
+            console.log('-> lcheck change', arguments, $(this).data('checkbox'));
+        });
+        $('.i-lcheck').change(function () {
+            console.log('-> input change', arguments);
+        })
+    })
+</script>
+</body>
+</html>

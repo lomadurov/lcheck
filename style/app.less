@@ -1,0 +1,54 @@
+body {
+    background-color: #fff !important;
+    margin: 20px 80px;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+}
+
+input[type="checkbox"]:focus {
+    outline: 1px solid #000;
+}
+
+table {
+    margin: 0 auto;
+}
+
+textarea {
+    width: 100%;
+}
+.b-lcheck {
+    width: 11px;
+    height: 11px;
+    border: 1px solid #C6C6C6;
+    border-radius: 1px;
+    outline: 0;
+    display: inline-block;
+    zoom: 1;
+
+    &_select_no {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+    &_focus_yes {
+        border-color: #0e90d2;
+    }
+    &_hover_yes {
+        border-color: #00A300;
+    }
+    &_disabled_yes {
+        background-color: #ccc;
+    }
+    &_state_checked {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAtklEQVQ4y2P4//8/A7Ux1Q0cxoaCADIbCUgCMTvVXAoE5kA8CYidyXYpGrAH4iVAHIXiCwoMDQTimUBcBsRMlBrKCsTpUANzkC0j11BuIK6EGlgKsoAkQ4FgChD7AzELVI8YEDdDDawDYk6YQaQY6gg1oAqILYC4D8oHGcyLbBAphoJAKtQgGO4EYiHk2CLHUJAXm6AG9gCxNHoSIMdQEJCFGqiALaGSayjMxQwUGzq0S6nhZygA2ojsbh6J67kAAAAASUVORK5CYII=);
+        background-position: -5px -6px;
+    }
+    &_state_indeterminate {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVAQMAAACT2TfVAAAABlBMVEXd3d10dHThX6XJAAAAAXRSTlMAQObYZgAAABFJREFUCNdjYCASMP+DYCIAAFCqAgPY2xgtAAAAAElFTkSuQmCC);
+        background-position: -5px -6px;
+    }
+}
