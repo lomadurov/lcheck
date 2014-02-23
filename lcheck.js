@@ -52,7 +52,7 @@ $(function () {
             this.change(state);
             return false;
         },
-        change: function (states, notFocus) {
+        change: function (states, notFocus, silent) {
             var self = this;
             if (!states) {
                 return this;
@@ -82,6 +82,9 @@ $(function () {
                     self.$input[0].checked = "checked";
                 } else {
                     self.$input[0].checked = undefined;
+                }
+                if (silent) {
+                    return true;
                 }
                 self.$input
                     .trigger('lcheck', state)
