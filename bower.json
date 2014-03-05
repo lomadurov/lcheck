@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "main": "lcheck.js",
     "dependencies": {
-        "jquery": "~1.11.0"
+        "jquery": "~1.11.0",
+        "font-awesome": "4.0.4-wip"
     }
 }

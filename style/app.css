@@ -1,28 +1,30 @@
-body {
-  background-color: #fff !important;
-  margin: 20px 80px;
-  font-family: 'Open Sans';
-  font-size: 14px;
-  font-weight: 400;
-  overflow: hidden;
-}
-input[type="checkbox"]:focus {
-  outline: 1px solid #000;
-}
-table {
-  margin: 0 auto;
-}
-textarea {
-  width: 100%;
-}
+/*---------------------------------------------------
+ - b-lcheck
+ ----------------------------------------------------
+ - @name SUP Design 2014
+ - @author Stanislav Lomadurov
+ - @email lord.rojer@gmail.com
+ ---------------------------------------------------*/
 .b-lcheck {
-  width: 11px;
-  height: 11px;
-  border: 1px solid #C6C6C6;
-  border-radius: 1px;
-  outline: 0;
+  width: 12px;
+  height: 12px;
   display: inline-block;
   zoom: 1;
+  border: 1px solid #C6C6C6;
+  border-radius: 2px;
+  outline: 0;
+  background: #ffffff;
+  color: #000;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 10px;
+  line-height: 13px;
+}
+.b-lcheck:before {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
 }
 .b-lcheck_select_no {
   -webkit-user-select: none;
@@ -40,11 +42,9 @@ textarea {
 .b-lcheck_disabled_yes {
   background-color: #ccc;
 }
-.b-lcheck_state_checked {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAtklEQVQ4y2P4//8/A7Ux1Q0cxoaCADIbCUgCMTvVXAoE5kA8CYidyXYpGrAH4iVAHIXiCwoMDQTimUBcBsRMlBrKCsTpUANzkC0j11BuIK6EGlgKsoAkQ4FgChD7AzELVI8YEDdDDawDYk6YQaQY6gg1oAqILYC4D8oHGcyLbBAphoJAKtQgGO4EYiHk2CLHUJAXm6AG9gCxNHoSIMdQEJCFGqiALaGSayjMxQwUGzq0S6nhZygA2ojsbh6J67kAAAAASUVORK5CYII=);
-  background-position: -5px -6px;
+.b-lcheck_state_checked:before {
+  content: "\f00c";
 }
-.b-lcheck_state_indeterminate {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVAQMAAACT2TfVAAAABlBMVEXd3d10dHThX6XJAAAAAXRSTlMAQObYZgAAABFJREFUCNdjYCASMP+DYCIAAFCqAgPY2xgtAAAAAElFTkSuQmCC);
-  background-position: -5px -6px;
+.b-lcheck_state_indeterminate:before {
+  content: "\f068";
 }

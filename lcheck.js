@@ -18,7 +18,7 @@ $(function () {
                     'click': $.proxy(this.toggle, this)
                 });
             }
-            this.$input.wrap('<span></span>');
+            this.$input.wrap(document.createElement('span'));
             this.$input.hide();
 
             this.$span = this.$input.parent();
@@ -92,6 +92,11 @@ $(function () {
                 return true;
             });
             return this;
+        },
+        remove: function () {
+            this.$input.remove();
+            this.$span.remove();
+            this.$label.remove();
         },
         options: {
             cssClass: {

@@ -2,9 +2,11 @@
 <html>
 <head>
     <title>lcheck</title>
+    <link href="./style/all.sup.css" rel='stylesheet' type="text/css">
     <link href="./style/app.css" rel='stylesheet' type="text/css">
 </head>
 <body>
+<div class="b-demonstration">
 <form>
     <table>
         <tr>
@@ -67,6 +69,7 @@
         </tr>
     </table>
 </form>
+</div>
 <script src="./bower_components/jquery/jquery.min.js"></script>
 <script src="./lcheck.js"></script>
 <script>
@@ -77,7 +80,7 @@
             $out.val($(this).serialize());
             return false;
         });
-        $('.i-lcheck').lcheck();
+        $('.i-lcheck').lcheck('indeterminate');
         $('.i-lcheck').bind('lcheck', function () {
             console.log('-> lcheck change', arguments, $(this).data('checkbox'));
         });
